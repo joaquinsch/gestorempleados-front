@@ -64,7 +64,7 @@ async function listarEmpleados() {
 }
 
 // Función para crear o actualizar un empleado
-// Función para crear o actualizar un empleado
+
 async function crearEmpleado(event) {
     event.preventDefault(); // Evitar que el formulario se envíe de manera tradicional
 
