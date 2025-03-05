@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Empleados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestor de Empleados</h1>
+
+        <h2>Guardar un empleado</h2>
+        <!-- Formulario para crear/editar empleados -->
+        <form id="form-empleado">
+            <input type="hidden" id="id_empleado" name="id_empleado">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+            <label for="sueldo">Sueldo:</label>
+            <input type="number" id="sueldo" name="sueldo" step="0.01" required>
+            <label for="puesto">Puesto:</label>
+            <input type="text" id="puesto" name="puesto" required>
+        
+            <!-- Contenedor para los botones -->
+            <div class="botones-formulario">
+                <button type="submit">Guardar</button>
+                <button type="button" id="cancelar-edicion" onclick="cancelarEdicion()" style="display: none;">Cancelar</button>
+            </div>
+        </form>
+
+        <!-- Contenedor para mensajes de error -->
+        <div id="mensaje-error" class="error-message">
+            <span id="mensaje-texto"></span>
+            <button id="cerrar-mensaje" onclick="cerrarMensaje()">×</button>
+        </div>
+
+        <!-- Lista de empleados en formato de tabla -->
+        <h2>Lista de Empleados</h2>
+
+<!-- Buscar empleado por ID -->
+        <div class="buscar-empleado">
+            <label for="id-buscar">Buscar:</label>
+            <input type="number" id="id-buscar" placeholder="Ingrese el ID" class="input-buscar">
+            <button onclick="buscarEmpleadoPorId()">Buscar</button>
+            <button onclick="volverAtras()">Lista de empleados</button>
+        </div>
+   <!-- Contenedor para mensajes de búsqueda -->
+    <div id="mensaje-busqueda" class="mensaje-busqueda" style="display: none;">
+        <span id="mensaje-busqueda-texto"></span>
+        <button id="cerrar-mensaje-busqueda" onclick="cerrarMensajeBusqueda()">×</button>
+    </div>
+
+
+
+        <table id="tabla-empleados">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Sueldo</th>
+                    <th>Puesto</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las filas de empleados se agregarán aquí dinámicamente -->
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
