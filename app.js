@@ -1,5 +1,5 @@
 // URL base de la API
-const API_URL = "http://localhost:8080/api";
+const API_URL = "https://gestorempleados-production.up.railway.app/api";
 
 // Función para mostrar mensajes de éxito o error
 
